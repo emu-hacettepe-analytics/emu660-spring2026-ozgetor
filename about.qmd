@@ -3,38 +3,41 @@ title: "About Me"
 sidebar: false 
 ---
 
-![](assets/images/vesikalik.jpeg){fig-align="center"}
+![](images/FOTO-01.PNG){fig-align="center" width="132"}
 
 # Education
 
--   B.S., ................................., ....................................University, Turkey, 20xx - 20xx.
--   M.S., Industrial Engineering, Hacettepe University, Turkey, 20xx - ongoing.
--   Ph.D.., Industrial Engineering, Hacettepe University, Turkey, 20xx - ongoing.
+-   B.S., TOBB University of Economics and Technology, Turkey, 2015 - 2020.
+-   M.S., Industrial Engineering, Hacettepe University, Turkey, 2026 - ongoing.
 
 # Work Experience
 
 ## Employements
 
-1.  Firm xxx, position xx, year xxx
+1.  The Union of Chambers and Commodity Exchanges of Turkey (TOBB) , year 2021-2023
 
-2.  Firm yyy, position yyy, year yyy
+2.  ASELSAN, EXPERT ENGINEER 2023- ongoing
 
 ## Internships
 
-1.  Firm aaa, position xx, year xxx
+1.  Pfiffner Transformer, 2018
 
-2.  Firm bbb, position yyy, year yyy
+2.  HAVELSAN, 2019
+
+3.  HAVELSAN, 2020
 
 # Projects
 
-1.  TUBİTAK 1001..........................
-
-# Publications
-
-1.  Dasdemir, E., Batta, R., Koksalan, M., Tezcaner Ozturk, D. (2022) “UAV Routing for Reconnaissance Mission: A Multi-Objective Orienteering Problem with Time-Dependent Prizes and Multiple Connections”, Computers & Operations Research, 145: 105882.
+1.  MAN, Multi-Model Mechanical Assembly Determination of Belt Pick-up Sequence for the Line, 2020
 
 # Competencies
 
 R, Quarto, Git, Python
 
 # Hobbies
+
+HANDICRAFTS ACTIVITIES
+
+COOKING
+
+BAKERY

@@ -1,9 +1,10 @@
 ---
 title: "About Me"
 sidebar: false 
+images: profile.jpg.png
 ---
 
-![](images/FOTO-01.PNG){fig-align="center" width="132"}
+![](profile.jpg.PNG){fig-align="center" width="175" height="175"}
 
 # Education
 
@@ -41,3 +42,5 @@ HANDICRAFTS ACTIVITIES
 COOKING
 
 BAKERY
+
+You can download my CV by clicking [here.](cv.pdf)

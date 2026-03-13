@@ -2,8 +2,10 @@
 title: "Welcome to My Analytics Lab"
 ---
 
-Hello!! My name is xxx xxxx.
+Hello!! My name is Özge TORCU KILIÇ.
 
 This is my personal webpage.
 
 Please stay tuned to follow my works on data analytics, blog posts, and more.
+
+![](analiz.jpg)

@@ -11,25 +11,25 @@ My first assignment has two parts.
 
 ## (a)
 
-Video: Veri Bilimi ve Endüstri Mühendisliği Üzerine Sohbetler - Baykal Hafızoğlu & Erdi Daşdemir
+Video: Conversations on Data Science and Industrial Engineering - Baykal Hafızoğlu & Erdi Daşdemir
 
-Katılımcıların akademik geçmişi ve Endüstri Mühendisliği'nden veri bilimi dalına nasıl geçtikleri konuşulmuş. Endüstri Mühendisliği ile Veri Bilimi’nin aslında ne kadar iç içe olduğu anlatılmış. Sadece çok iyi kod yazmak ya da karmaşık matematiksel modeller kurmak yeterli olmayacağı konuşulmuş. Veriyi değere dönüştürmenin önemli olduğundan bahsedilmiş. Veriyi geleceği planlamak ve süreçlere entegre etmek için kullanmak gerektiği, veri biliminin karar vermede yardımcı araç olduğu vurgulanmış. Yetenekleri doğru anlama ve uygulama doğrultusunda geliştirmek gerektiği söylenmiş. Sektördeki uygulamalar ve karşılaşılan zorluklardan bahsedilmiş.
+Summary: The participants' academic backgrounds and how they transitioned from Industrial Engineering to Data Science were discussed. The close relationship between Industrial Engineering and Data Science was explained. It was emphasized that simply writing excellent code or creating complex mathematical models is not enough. The importance of transforming data into value was highlighted. It was stressed that data should be used to plan for the future and integrate it into processes, and that data science is a helpful tool in decision-making. It was stated that skills should be developed in line with understanding and application. Industry applications and challenges were discussed.
 
-## (b) 
+## (b)
 
-Soru1: Endüstri mühendsilerinin veri biliminde en büyük avantajı nedir?
+Question 1: What is the biggest advantage of industrial engineers in data science?
 
--   **Mühendislerin "sistem odaklı" düşünmesi ve veriyi sadece analiz etmekle kalmayıp, onu bir karar verme ve optimizasyon süreci olarak yönetebilmesidir.**
+It is their ability to think "systemically" and to manage data not only by analyzing it, but also as a decision-making and optimization process.
 
-Soru 2: Bir projenin "başarılı" sayılması için gereken nedir?
+Question 2: What is required for a project to be considered "successful"?
 
--   A\) En yeni ve en pahalı yazılımları kullanmak.
+A)  Using the newest and most expensive software.
 
--   B\) Çok büyük miktarda veriye sahip olmak.
+B)  Having a very large amount of data.
 
--   **C) Modelin işe yarar bir sonuç üretmesi ve bir problemi çözmesi.**
+C)  The model producing a useful result and solving a problem.
 
--   D\) Grafiklerin çok güzel görünmesi.
+D)  The graphs looking very nice.
 
 ```{r}
 #| label: task-3-c
@@ -40,9 +40,9 @@ my_birth_year <- 1996
 
 # k sayısı hesaplama
 k <- (nchar(my_first) + my_birth_year) %% 15 + 8
-cat("Hesaplanan k değerim:", k, "\n")
+cat("calculated my k :", k, "\n")
 
-# İstatistik fonksiyonu
+# function
 compute_stats <- function(x) {
   list(
     mean = mean(x, na.rm = TRUE),
@@ -54,11 +54,11 @@ compute_stats <- function(x) {
   )
 }
 
-# 1. Yöntem: sapply kullanımı
+# 1. using sapply
 cat("\n--- sapply Sonuçları ---\n")
 sapply(mtcars, compute_stats)
 
-# 2. Yöntem: apply kullanımı
+# 2. using apply
 cat("\n--- apply Sonuçları ---\n")
 apply_results <- apply(as.matrix(mtcars), 2, compute_stats)
 print(apply_results)
@@ -85,7 +85,7 @@ if (k %% 2 == 0) {
   print(tail(polls_us_election_2016, k))
 }
 
-# Toplam NA sayısı
+# sum NA 
 cat("\nToplam NA sayısı:", sum(is.na(polls_us_election_2016)), "\n")
 
 # NA Değerlerini Doldurma
@@ -115,4 +115,4 @@ cat("\nDoldurma sonrası boş veri var mı?:", anyNA(new_data))
 
 > **AI Disclosure:** I utilized AI tools (Gemini/ChatGPT) to assist in structuring the R code and translating the assignment requirements.
 >
-> **Prompt used:** "Bana EMU660 ödevi için k sayısını hesaplayan, mtcars verisini analiz eden ve NA değerlerini dolduran R kodlarını yazar mısın?"
+> **Prompt used:** "Could you write R code for my EMU660 assignment that calculates the number k, analyzes mtcars data, and populates the NA values?"

@@ -426,33 +426,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>My first assignment has two parts.</p>
 <section id="a" class="level2">
 <h2 class="anchored" data-anchor-id="a">(a)</h2>
-<p>Video: Veri Bilimi ve Endüstri Mühendisliği Üzerine Sohbetler - Baykal Hafızoğlu &amp; Erdi Daşdemir</p>
-<p>Katılımcıların akademik geçmişi ve Endüstri Mühendisliği’nden veri bilimi dalına nasıl geçtikleri konuşulmuş. Endüstri Mühendisliği ile Veri Bilimi’nin aslında ne kadar iç içe olduğu anlatılmış. Sadece çok iyi kod yazmak ya da karmaşık matematiksel modeller kurmak yeterli olmayacağı konuşulmuş. Veriyi değere dönüştürmenin önemli olduğundan bahsedilmiş. Veriyi geleceği planlamak ve süreçlere entegre etmek için kullanmak gerektiği, veri biliminin karar vermede yardımcı araç olduğu vurgulanmış. Yetenekleri doğru anlama ve uygulama doğrultusunda geliştirmek gerektiği söylenmiş. Sektördeki uygulamalar ve karşılaşılan zorluklardan bahsedilmiş.</p>
+<p>Video: Conversations on Data Science and Industrial Engineering - Baykal Hafızoğlu &amp; Erdi Daşdemir</p>
+<p>Summary: The participants’ academic backgrounds and how they transitioned from Industrial Engineering to Data Science were discussed. The close relationship between Industrial Engineering and Data Science was explained. It was emphasized that simply writing excellent code or creating complex mathematical models is not enough. The importance of transforming data into value was highlighted. It was stressed that data should be used to plan for the future and integrate it into processes, and that data science is a helpful tool in decision-making. It was stated that skills should be developed in line with understanding and application. Industry applications and challenges were discussed.</p>
 </section>
 <section id="b" class="level2">
 <h2 class="anchored" data-anchor-id="b">(b)</h2>
-<p>Soru1: Endüstri mühendsilerinin veri biliminde en büyük avantajı nedir?</p>
-<ul>
-<li><strong>Mühendislerin “sistem odaklı” düşünmesi ve veriyi sadece analiz etmekle kalmayıp, onu bir karar verme ve optimizasyon süreci olarak yönetebilmesidir.</strong></li>
-</ul>
-<p>Soru 2: Bir projenin “başarılı” sayılması için gereken nedir?</p>
-<ul>
-<li><p>A) En yeni ve en pahalı yazılımları kullanmak.</p></li>
-<li><p>B) Çok büyük miktarda veriye sahip olmak.</p></li>
-<li><p><strong>C) Modelin işe yarar bir sonuç üretmesi ve bir problemi çözmesi.</strong></p></li>
-<li><p>D) Grafiklerin çok güzel görünmesi.</p></li>
-</ul>
+<p>Question 1: What is the biggest advantage of industrial engineers in data science?</p>
+<p>It is their ability to think “systemically” and to manage data not only by analyzing it, but also as a decision-making and optimization process.</p>
+<p>Question 2: What is required for a project to be considered “successful”?</p>
+<ol type="A">
+<li><p>Using the newest and most expensive software.</p></li>
+<li><p>Having a very large amount of data.</p></li>
+<li><p>The model producing a useful result and solving a problem.</p></li>
+<li><p>The graphs looking very nice.</p></li>
+</ol>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_first <span class="ot">&lt;-</span> <span class="st">"Özge"</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>my_birth_year <span class="ot">&lt;-</span> <span class="dv">1996</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># k sayısı hesaplama</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> (<span class="fu">nchar</span>(my_first) <span class="sc">+</span> my_birth_year) <span class="sc">%%</span> <span class="dv">15</span> <span class="sc">+</span> <span class="dv">8</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Hesaplanan k değerim:"</span>, k, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"calculated my k :"</span>, k, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Hesaplanan k değerim: 13 </code></pre>
+<pre><code>calculated my k : 13 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># İstatistik fonksiyonu</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># function</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>compute_stats <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
@@ -464,7 +462,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Yöntem: sapply kullanımı</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. using sapply</span></span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">--- sapply Sonuçları ---</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -487,7 +485,7 @@ iqr      1         1         1         2
 min      0         0         3         1       
 max      1         1         5         8       </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Yöntem: apply kullanımı</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. using apply</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">--- apply Sonuçları ---</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -1009,7 +1007,7 @@ Orijinal Verinin Son k Satırı:</code></pre>
 4207               NA
 4208               NA</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Toplam NA sayısı</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sum NA </span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">Toplam NA sayısı:"</span>, <span class="fu">sum</span>(<span class="fu">is.na</span>(polls_us_election_2016)), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -1108,7 +1106,7 @@ Doldurma sonrası boş veri var mı?: FALSE</code></pre>
 <h1></h1>
 <blockquote class="blockquote">
 <p><strong>AI Disclosure:</strong> I utilized AI tools (Gemini/ChatGPT) to assist in structuring the R code and translating the assignment requirements.</p>
-<p><strong>Prompt used:</strong> “Bana EMU660 ödevi için k sayısını hesaplayan, mtcars verisini analiz eden ve NA değerlerini dolduran R kodlarını yazar mısın?”</p>
+<p><strong>Prompt used:</strong> “Could you write R code for my EMU660 assignment that calculates the number k, analyzes mtcars data, and populates the NA values?”</p>
 </blockquote>
 
 

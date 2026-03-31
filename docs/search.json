@@ -2,65 +2,65 @@
   {
     "objectID": "project.html",
     "href": "project.html",
-    "title": "Project X",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
     "section": "",
     "text": "Welcome to my/our project page.\nKeep an eye on this space to stay updated with my project activities.\n(The titles below are provided as examples; please feel free to adjust them as necessary.)"
   },
   {
     "objectID": "project.html#data-source",
     "href": "project.html#data-source",
-    "title": "Project X",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
     "section": "2.1 Data Source",
-    "text": "2.1 Data Source\nxxxxxx"
+    "text": "2.1 Data Source\nhttps://deprem.afad.gov.tr/event-catalog"
   },
   {
     "objectID": "project.html#general-information-about-data",
     "href": "project.html#general-information-about-data",
-    "title": "Project X",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
     "section": "2.2 General Information About Data",
-    "text": "2.2 General Information About Data\nxxxxxx"
+    "text": "2.2 General Information About Data\nThis dataset contains earthquake records in Türkiye between 2020 and 2026, sourced from AFAD (Disaster and Emergency Management Authority). It includes nrow(deprem_data) observations and 9 variables. Key variables include Date (time of occurrence), Latitude/Longitude (coordinates), Magnitude (intensity), and Depth (focal depth)."
   },
   {
     "objectID": "project.html#reason-of-choice",
     "href": "project.html#reason-of-choice",
-    "title": "Project X",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
     "section": "2.3 Reason of Choice",
-    "text": "2.3 Reason of Choice\nxxxxxx"
+    "text": "2.3 Reason of Choice\nTürkiye is a country deeply affected by seismic activities due to its geographical location on major fault lines. The 2023 Kahramanmaraş earthquakes marked a turning point in our history, showing the vital importance of data-driven disaster management. I chose this dataset to analyze the patterns of these events using analytical tools. As an industrial engineer, understanding these patterns is crucial for optimizing resource allocation, planning emergency logistics, and making data-backed decisions for urban resilience."
   },
   {
     "objectID": "project.html#preprocessing",
     "href": "project.html#preprocessing",
-    "title": "Project X",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
     "section": "2.4 Preprocessing",
-    "text": "2.4 Preprocessing\nxxxxxx"
+    "text": "2.4 Preprocessing\nThe raw data required several preparation steps before analysis:\n\nData Import: The dataset was imported from an Excel file using the readxl library.\nType Conversion: The Date column was converted from a string format to a POSIXct date-time object to enable time-series analysis.\nFiltering: To focus on more significant seismic events, the data was filtered for magnitudes of 3.0 and above (or your specific criteria).\nData Integrity: Missing values (NAs) were checked and addressed.\nReproducibility: The final cleaned dataset was saved as an .RData file to ensure the analysis can be reproduced by others.\n\nlibrary(readxl)\nlibrary(tidyverse)\n\n# 2. Excel'i okur\ndeprem_data &lt;- read_excel(\"data/deprem_verisi.xlsx\")\n\n# 3. Tarih formatını düzeltir\ndeprem_data$Date &lt;- as.POSIXct(deprem_data$Date, format=\"%d/%m/%Y %H:%M:%S\")\n\nsave(deprem_data, file = \"deprem_verisi.RData\")"
   },
   {
     "objectID": "project.html#exploratory-data-analysis",
     "href": "project.html#exploratory-data-analysis",
-    "title": "Project X",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
     "section": "3.1 Exploratory Data Analysis",
-    "text": "3.1 Exploratory Data Analysis\nxxxxxx"
+    "text": "3.1 Exploratory Data Analysis\nIn this section, I will perform an initial exploration of the earthquake data. I plan to visualize the distribution of earthquake magnitudes using histograms and examine the depth of seismic activities. This will help identify the “new normal” of seismic activity levels in Türkiye."
   },
   {
     "objectID": "project.html#trend-analysis",
     "href": "project.html#trend-analysis",
-    "title": "Project X",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
     "section": "3.2 Trend Analysis",
-    "text": "3.2 Trend Analysis\nxxxxxx"
+    "text": "3.2 Trend Analysis\nI will conduct a time-series analysis to observe how earthquake frequency has changed over the years (2020-2026). By aggregating data on a monthly basis, I aim to visualize the massive spike caused by the 2023 earthquakes and monitor the subsequent aftershock trends."
   },
   {
     "objectID": "project.html#model-fitting",
     "href": "project.html#model-fitting",
-    "title": "Project X",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
     "section": "3.3 Model Fitting",
-    "text": "3.3 Model Fitting\nxxxxxx"
+    "text": "3.3 Model Fitting\nFor the advanced analysis part, I intend to use Clustering Analysis (such as K-means) based on Latitude and Longitude to identify geographic “hotspots” of seismic activity. Additionally, I may explore Time Series Forecasting to model the expected frequency of tremors in specific regions."
   },
   {
     "objectID": "project.html#results",
     "href": "project.html#results",
-    "title": "Project X",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
     "section": "3.4 Results",
-    "text": "3.4 Results\nxxxxxx"
+    "text": "3.4 Results\nInitial findings will be presented here after a full analysis has been completed."
   },
   {
     "objectID": "index.html",

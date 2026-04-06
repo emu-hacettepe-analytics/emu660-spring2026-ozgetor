@@ -1,16 +1,15 @@
 ---
 title: "Earthquake Analysis of Türkiye (2020-2026)"
+author: "Özge Torcu Kılıç"
+format: html
+output-file: index.html
 ---
 
-Welcome to my/our project page.
-
-Keep an eye on this space to stay updated with my project activities.
-
-(The titles below are provided as examples; please feel free to adjust them as necessary.)
+Türkiye is located on major fault lines and is highly prone to seismic activity. This project analyzes earthquakes with magnitude greater than 3 between 2020 and 2026 using data obtained from AFAD. The aim is to identify temporal trends and spatial patterns in earthquake occurrences.
 
 # 1. Project Overview and Scope
 
-In this project, I am analyzing earthquake data from Türkiye obtained from AFAD (Disaster and Emergency Management Presidency) for the years 2020-2026.
+In this project, I analyze earthquake data from Türkiye obtained from AFAD (Disaster and Emergency Management Presidency) for the years 2020-2026.
 
 My aim is to show, using analytical methods, how seismic activity has changed, particularly after the 2023 Kahramanmaraş earthquakes, and in which regions it has clustered.
 
@@ -26,70 +25,125 @@ The key columns are: `Magnitude`, `Latitude-Longitude`, and `Date`.
 
 ## 2.2 General Information About Data
 
-This dataset contains earthquake records in Türkiye between 2020 and 2026, sourced from AFAD (Disaster and Emergency Management Authority). It includes **`nrow(deprem_data)`** observations and 9 variables. Key variables include `Date` (time of occurrence), `Latitude/Longitude` (coordinates), `Magnitude` (intensity), and `Depth` (focal depth).
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| results: asis
+
+library(readxl)
+
+deprem_data <- read_excel("data/deprem_verisi.xlsx")
+deprem_data$Magnitude <- as.numeric(deprem_data$Magnitude)
+
+cat(
+  "This dataset contains earthquake records in Türkiye between 2020 and 2026, sourced from AFAD. It includes ",
+  nrow(deprem_data),
+  " observations and ",
+  ncol(deprem_data),
+  " variables. The magnitude values range between ",
+  min(deprem_data$Magnitude, na.rm = TRUE),
+  " and ",
+  max(deprem_data$Magnitude, na.rm = TRUE),
+  "."
+)
+```
+
 
 ## 2.3 Reason of Choice
 
-Türkiye is a country deeply affected by seismic activities due to its geographical location on major fault lines. The 2023 Kahramanmaraş earthquakes marked a turning point in our history, showing the vital importance of data-driven disaster management. I chose this dataset to analyze the patterns of these events using analytical tools. As an industrial engineer, understanding these patterns is crucial for optimizing resource allocation, planning emergency logistics, and making data-backed decisions for urban resilience.
+Türkiye is a country deeply affected by seismic activities due to its geographical location on major fault lines. The 2023 Kahramanmaraş earthquakes highlighted the importance of data-driven disaster management. I chose this dataset to analyze earthquake patterns using analytical tools and visualizations.
 
 ## 2.4 Preprocessing
 
 The raw data required several preparation steps before analysis:
 
--   **Data Import:** The dataset was imported from an Excel file using the `readxl` library.
+- The dataset was imported from an Excel file using the `readxl` library.
+- The `Date` column was converted into `POSIXct` format to enable time-based analysis.
+- The `Magnitude` column was converted into numeric format.
+- The cleaned dataset was saved as an `.RData` file for reproducibility.
 
--   **Type Conversion:** The `Date` column was converted from a string format to a `POSIXct` date-time object to enable time-series analysis.
+```{r}
+#| label: data-preparation
+#| echo: false
+#| message: false
+#| warning: false
 
--   **Filtering:** To focus on more significant seismic events, the data was filtered for magnitudes of 3.0 and above (or your specific criteria).
+library(readxl)
+library(dplyr)
 
--   **Data Integrity:** Missing values (NAs) were checked and addressed.
+deprem_data <- read_excel("data/deprem_verisi.xlsx")
 
--   **Reproducibility:** The final cleaned dataset was saved as an `.RData` file to ensure the analysis can be reproduced by others.
+deprem_data$Date <- as.POSIXct(
+  deprem_data$Date,
+  format = "%d/%m/%Y %H:%M:%S"
+)
 
-    ```{r}
-    #| label: data-preparation
-    #| message: false
-    #| warning: false
+deprem_data$Magnitude <- as.numeric(deprem_data$Magnitude)
 
-    library(readxl)
-    library(tidyverse)
+save(deprem_data, file = "deprem_verisi.RData")
+```
 
-    # 2. Excel'i okur
-    deprem_data <- read_excel("data/deprem_verisi.xlsx")
-
-    # 3. Tarih formatını düzeltir
-    deprem_data$Date <- as.POSIXct(deprem_data$Date, format="%d/%m/%Y %H:%M:%S")
-
-    save(deprem_data, file = "deprem_verisi.RData")
-    ```
 
 # 3. Analysis
 
 ## 3.1 Exploratory Data Analysis
 
-In this section, I will perform an initial exploration of the earthquake data. I plan to visualize the distribution of earthquake magnitudes using histograms and examine the depth of seismic activities. This will help identify the "new normal" of seismic activity levels in Türkiye.
+In this section, I perform an initial exploration of the earthquake data by visualizing the distribution of earthquake magnitudes.
+
+```{r}
+#| echo: false
+
+library(ggplot2)
+
+ggplot(deprem_data, aes(x = Magnitude)) +
+  geom_histogram(binwidth = 0.5, fill = "red", color = "white") +
+  labs(
+    title = "Magnitude Distribution of Earthquakes in Türkiye (2020-2026)",
+    x = "Magnitude",
+    y = "Count"
+  )
+```
 
 ## 3.2 Trend Analysis
 
-I will conduct a time-series analysis to observe how earthquake frequency has changed over the years (2020-2026). By aggregating data on a monthly basis, I aim to visualize the massive spike caused by the 2023 earthquakes and monitor the subsequent aftershock trends.
+This section examines how earthquake frequency has changed over time.
+
+```{r}
+#| echo: false
+
+library(dplyr)
+library(ggplot2)
+
+yearly_counts <- deprem_data %>%
+  mutate(Year = format(Date, "%Y")) %>%
+  count(Year)
+
+ggplot(yearly_counts, aes(x = Year, y = n, group = 1)) +
+  geom_line() +
+  geom_point() +
+  labs(
+    title = "Number of Earthquakes by Year",
+    x = "Year",
+    y = "Count"
+  )
+```
 
 ## 3.3 Model Fitting
 
-For the advanced analysis part, I intend to use **Clustering Analysis** (such as K-means) based on Latitude and Longitude to identify geographic "hotspots" of seismic activity. Additionally, I may explore **Time Series Forecasting** to model the expected frequency of tremors in specific regions.
+For the advanced analysis part, I may explore clustering methods such as K-means based on latitude and longitude to identify geographic hotspots of seismic activity. I may also examine simple time-based aggregations to better understand changes in earthquake frequency over time.
 
 ## 3.4 Results
 
-Initial findings will be presented here after a full analysis has been completed.
+Initial findings suggest that seismic activity in Türkiye is concentrated along major fault lines and that earthquake frequency varies across years.
 
 # 4. Results and Key Takeaways
 
-The frequency of earthquakes in Türkiye shows a significant structural break following February 2023.
+The frequency of earthquakes in Türkiye shows a noticeable increase after 2023.
 
 Seismic activities are not uniformly distributed but are heavily clustered along the East and North Anatolian fault lines.
 
-Analytical modeling of these clusters can provide decision-makers with better insights for regional risk assessment and disaster preparedness.
-
-Analytical modeling of these clusters can provide decision-makers with better insights for regional risk assessment and disaster preparedness.
+These patterns can provide useful insights for regional risk assessment and disaster preparedness.
 
 ------------------------------------------------------------------------
 
@@ -98,11 +152,3 @@ Analytical modeling of these clusters can provide decision-makers with better in
 Click the link below to download the processed dataset for reproducibility:
 
 [Download deprem_verisi.RData](deprem_verisi.RData)
-
-```{r}
-#| echo: false
-library(ggplot2)
-ggplot(deprem_data, aes(x = Magnitude)) +
-  geom_histogram(binwidth = 0.5, fill = "red", color = "white") +
-  labs(title = "Deprem Şiddeti Dağılımı (2020-2026)", x = "Magnitude", y = "Sayı")
-```
